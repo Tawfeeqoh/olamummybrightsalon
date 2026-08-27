@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { ClipperMenuIcon } from '@/components/ui/ClipperMenuIcon';
+import { ScissorCloseIcon } from '@/components/ui/ScissorCloseIcon';
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -72,7 +73,7 @@ export const Header = () => {
             onClick={() => setIsMenuOpen(true)}
             aria-label="Open menu"
           >
-            <Menu size={28} strokeWidth={1.5} />
+            <ClipperMenuIcon />
           </button>
         </div>
       </header>
@@ -85,7 +86,7 @@ export const Header = () => {
               <Image src="/logo.jpg" alt="Ola Mummy Bright" fill className="object-contain" />
             </Link>
             <button className="text-black" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">
-              <X size={32} strokeWidth={1.5} />
+              <ScissorCloseIcon />
             </button>
           </div>
 
