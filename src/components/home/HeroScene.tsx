@@ -150,7 +150,7 @@ export const HeroScene = () => {
         <div className="absolute top-0 left-0 w-full h-28 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-full h-28 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none"></div>
 
-        {/* Column 1 — scrolls UP */}
+        {/* Column 1 - scrolls UP */}
         <div className="flex-1 flex flex-col gap-1.5 animate-photo-up will-change-transform">
           {col1.map((img, i) => (
             <div key={i} className="relative w-full aspect-[3/4] shrink-0 overflow-hidden bg-white/5">
@@ -159,14 +159,15 @@ export const HeroScene = () => {
                 alt={img.alt}
                 fill
                 className="object-cover object-top"
-                sizes="15vw"
-                priority={i < 2}
+                sizes="12vw"
+                priority={i === 0}
+                loading={i === 0 ? 'eager' : 'lazy'}
               />
             </div>
           ))}
         </div>
 
-        {/* Column 2 — scrolls DOWN (starts at -50% offset) */}
+        {/* Column 2 - scrolls DOWN */}
         <div className="flex-1 flex flex-col gap-1.5 -mt-[50%] animate-photo-down will-change-transform">
           {col2.map((img, i) => (
             <div key={i} className="relative w-full aspect-[3/4] shrink-0 overflow-hidden bg-white/5">
@@ -175,14 +176,15 @@ export const HeroScene = () => {
                 alt={img.alt}
                 fill
                 className="object-cover object-top"
-                sizes="15vw"
-                priority={i < 2}
+                sizes="12vw"
+                priority={i === 0}
+                loading={i === 0 ? 'eager' : 'lazy'}
               />
             </div>
           ))}
         </div>
 
-        {/* Column 3 — scrolls UP, slower */}
+        {/* Column 3 - scrolls UP, slower */}
         <div className="flex-1 flex flex-col gap-1.5 -mt-[20%] animate-photo-up will-change-transform" style={{ animationDuration: '50s' }}>
           {col3.map((img, i) => (
             <div key={i} className="relative w-full aspect-[3/4] shrink-0 overflow-hidden bg-white/5">
@@ -191,7 +193,8 @@ export const HeroScene = () => {
                 alt={img.alt}
                 fill
                 className="object-cover object-top"
-                sizes="15vw"
+                sizes="12vw"
+                loading="lazy"
               />
             </div>
           ))}
