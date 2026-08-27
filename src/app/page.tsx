@@ -4,6 +4,7 @@ import { Marquee } from '@/components/home/Marquee';
 import { ServicesGrid } from '@/components/home/ServicesGrid';
 import { GalleryTeaser } from '@/components/home/GalleryTeaser';
 import { ChairScrollSection } from '@/components/home/ChairScrollSection';
+import { AboutTeaser } from '@/components/home/AboutTeaser';
 import { Testimonials } from '@/components/home/Testimonials';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       </div>
       <GalleryTeaser />
       <ChairScrollSection />
+      <AboutTeaser />
       <Testimonials />
     </>
   );
