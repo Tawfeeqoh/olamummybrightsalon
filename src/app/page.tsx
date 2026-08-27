@@ -12,12 +12,6 @@ const HeroScene = dynamic(
   { ssr: false }
 );
 
-// Lazy-load the chair section (Three.js) — loaded by ChairScrollSection's own IntersectionObserver
-const ChairScrollSection = dynamic(
-  () => import('@/components/home/ChairScrollSection').then(m => ({ default: m.ChairScrollSection })),
-  { ssr: false }
-);
-
 export default function Home() {
   return (
     <>
@@ -27,7 +21,6 @@ export default function Home() {
         <ServicesGrid />
       </div>
       <GalleryTeaser />
-      <ChairScrollSection />
       <AboutTeaser />
       <Testimonials />
     </>
